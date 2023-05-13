@@ -21,7 +21,7 @@ jobs:
           ruby-version: '3.0'
           bundler-cache: true
 
-      - name: Deploy iOS Beta to TestFlight via Fastlane
+      - name: Deploy to TestFlight
         uses: maierj/fastlane-action@v3.0.0
         with:
           lane: beta

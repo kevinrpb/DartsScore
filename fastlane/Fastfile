@@ -62,12 +62,8 @@ platform :ios do
       duration: 1200,            
       in_house: false
     )
-    
+
     increment_build_number(xcodeproj: "#{APP_NAME}.xcodeproj")
-    
-    cocoapods(
-      clean_install: true
-    )
 
     match(
       type: 'appstore',
@@ -81,7 +77,7 @@ platform :ios do
 
     gym(
       configuration: "Release",
-      workspace: "#{APP_NAME}.xcworkspace",
+      project: "#{APP_NAME}.xcodeproj",
       scheme: "#{APP_NAME}",
       export_method: "app-store",
       export_options: {
