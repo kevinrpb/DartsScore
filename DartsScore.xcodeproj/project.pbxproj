@@ -8,18 +8,29 @@
 
 /* Begin PBXBuildFile section */
 		E3326BB029FE772C00248C8F /* DartsScoreApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3326BAF29FE772C00248C8F /* DartsScoreApp.swift */; };
-		E3326BB229FE772C00248C8F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3326BB129FE772C00248C8F /* ContentView.swift */; };
+		E3326BB229FE772C00248C8F /* MainMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3326BB129FE772C00248C8F /* MainMenuView.swift */; };
 		E3326BB429FE772D00248C8F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E3326BB329FE772D00248C8F /* Assets.xcassets */; };
 		E3326BB829FE772D00248C8F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E3326BB729FE772D00248C8F /* Preview Assets.xcassets */; };
+		E376ED572A06C92400F1FC98 /* Shape+Fill.swift in Sources */ = {isa = PBXBuildFile; fileRef = E376ED562A06C92400F1FC98 /* Shape+Fill.swift */; };
+		E3A78D6B29FEA7AB00A1F439 /* CricketGame in Frameworks */ = {isa = PBXBuildFile; productRef = E3A78D6A29FEA7AB00A1F439 /* CricketGame */; };
+		E3A78D6D29FEA7BE00A1F439 /* CricketGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A78D6C29FEA7BE00A1F439 /* CricketGameView.swift */; };
+		E3A78D7029FEA88400A1F439 /* Defaults in Frameworks */ = {isa = PBXBuildFile; productRef = E3A78D6F29FEA88400A1F439 /* Defaults */; };
+		E3A78D7329FEA8DA00A1F439 /* DartsScore+Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A78D7229FEA8DA00A1F439 /* DartsScore+Defaults.swift */; };
+		E3D75C272A0F8EDF00ABFFBD /* CricketGameSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D75C262A0F8EDF00ABFFBD /* CricketGameSettingsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		E3326BAC29FE772C00248C8F /* DartsScore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DartsScore.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3326BAF29FE772C00248C8F /* DartsScoreApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DartsScoreApp.swift; sourceTree = "<group>"; };
-		E3326BB129FE772C00248C8F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		E3326BB129FE772C00248C8F /* MainMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuView.swift; sourceTree = "<group>"; };
 		E3326BB329FE772D00248C8F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E3326BB529FE772D00248C8F /* DartsScore.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DartsScore.entitlements; sourceTree = "<group>"; };
 		E3326BB729FE772D00248C8F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		E3326BC329FE77E200248C8F /* Packages */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Packages; path = DartsScore/Packages; sourceTree = "<group>"; };
+		E376ED562A06C92400F1FC98 /* Shape+Fill.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Shape+Fill.swift"; sourceTree = "<group>"; };
+		E3A78D6C29FEA7BE00A1F439 /* CricketGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CricketGameView.swift; sourceTree = "<group>"; };
+		E3A78D7229FEA8DA00A1F439 /* DartsScore+Defaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DartsScore+Defaults.swift"; sourceTree = "<group>"; };
+		E3D75C262A0F8EDF00ABFFBD /* CricketGameSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CricketGameSettingsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -27,6 +38,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E3A78D7029FEA88400A1F439 /* Defaults in Frameworks */,
+				E3A78D6B29FEA7AB00A1F439 /* CricketGame in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -37,7 +50,9 @@
 			isa = PBXGroup;
 			children = (
 				E3326BAE29FE772C00248C8F /* DartsScore */,
+				E3326BC329FE77E200248C8F /* Packages */,
 				E3326BAD29FE772C00248C8F /* Products */,
+				E3A78D6929FEA7AB00A1F439 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -52,11 +67,10 @@
 		E3326BAE29FE772C00248C8F /* DartsScore */ = {
 			isa = PBXGroup;
 			children = (
-				E3326BAF29FE772C00248C8F /* DartsScoreApp.swift */,
-				E3326BB129FE772C00248C8F /* ContentView.swift */,
-				E3326BB329FE772D00248C8F /* Assets.xcassets */,
-				E3326BB529FE772D00248C8F /* DartsScore.entitlements */,
-				E3326BB629FE772D00248C8F /* Preview Content */,
+				E3326BC029FE775200248C8F /* Application */,
+				E3326BBF29FE774E00248C8F /* Views */,
+				E3A78D7129FEA8B300A1F439 /* Extensions */,
+				E3326BBE29FE773F00248C8F /* Support Files */,
 			);
 			path = DartsScore;
 			sourceTree = "<group>";
@@ -67,6 +81,58 @@
 				E3326BB729FE772D00248C8F /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		E3326BBE29FE773F00248C8F /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				E3326BB329FE772D00248C8F /* Assets.xcassets */,
+				E3326BB529FE772D00248C8F /* DartsScore.entitlements */,
+				E3326BB629FE772D00248C8F /* Preview Content */,
+			);
+			path = "Support Files";
+			sourceTree = "<group>";
+		};
+		E3326BBF29FE774E00248C8F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E3326BB129FE772C00248C8F /* MainMenuView.swift */,
+				E3D75C282A0F931000ABFFBD /* Cricket */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		E3326BC029FE775200248C8F /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				E3326BAF29FE772C00248C8F /* DartsScoreApp.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		E3A78D6929FEA7AB00A1F439 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E3A78D7129FEA8B300A1F439 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				E3A78D7229FEA8DA00A1F439 /* DartsScore+Defaults.swift */,
+				E376ED562A06C92400F1FC98 /* Shape+Fill.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		E3D75C282A0F931000ABFFBD /* Cricket */ = {
+			isa = PBXGroup;
+			children = (
+				E3A78D6C29FEA7BE00A1F439 /* CricketGameView.swift */,
+				E3D75C262A0F8EDF00ABFFBD /* CricketGameSettingsView.swift */,
+			);
+			path = Cricket;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -85,6 +151,10 @@
 			dependencies = (
 			);
 			name = DartsScore;
+			packageProductDependencies = (
+				E3A78D6A29FEA7AB00A1F439 /* CricketGame */,
+				E3A78D6F29FEA88400A1F439 /* Defaults */,
+			);
 			productName = DartsScore;
 			productReference = E3326BAC29FE772C00248C8F /* DartsScore.app */;
 			productType = "com.apple.product-type.application";
@@ -113,6 +183,9 @@
 				Base,
 			);
 			mainGroup = E3326BA329FE772C00248C8F;
+			packageReferences = (
+				E3A78D6E29FEA88400A1F439 /* XCRemoteSwiftPackageReference "Defaults" */,
+			);
 			productRefGroup = E3326BAD29FE772C00248C8F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -139,8 +212,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E3326BB229FE772C00248C8F /* ContentView.swift in Sources */,
+				E3326BB229FE772C00248C8F /* MainMenuView.swift in Sources */,
+				E3D75C272A0F8EDF00ABFFBD /* CricketGameSettingsView.swift in Sources */,
+				E3A78D7329FEA8DA00A1F439 /* DartsScore+Defaults.swift in Sources */,
+				E376ED572A06C92400F1FC98 /* Shape+Fill.swift in Sources */,
 				E3326BB029FE772C00248C8F /* DartsScoreApp.swift in Sources */,
+				E3A78D6D29FEA7BE00A1F439 /* CricketGameView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,14 +338,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = DartsScore/DartsScore.entitlements;
+				CODE_SIGN_ENTITLEMENTS = "DartsScore/Support Files/DartsScore.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"DartsScore/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"DartsScore/Support Files/Preview Content\"";
 				DEVELOPMENT_TEAM = YUN383XGPH;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -299,14 +377,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = DartsScore/DartsScore.entitlements;
+				CODE_SIGN_ENTITLEMENTS = "DartsScore/Support Files/DartsScore.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"DartsScore/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"DartsScore/Support Files/Preview Content\"";
 				DEVELOPMENT_TEAM = YUN383XGPH;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -354,6 +433,29 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		E3A78D6E29FEA88400A1F439 /* XCRemoteSwiftPackageReference "Defaults" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/sindresorhus/Defaults";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.2.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E3A78D6A29FEA7AB00A1F439 /* CricketGame */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = CricketGame;
+		};
+		E3A78D6F29FEA88400A1F439 /* Defaults */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E3A78D6E29FEA88400A1F439 /* XCRemoteSwiftPackageReference "Defaults" */;
+			productName = Defaults;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = E3326BA429FE772C00248C8F /* Project object */;
 }
