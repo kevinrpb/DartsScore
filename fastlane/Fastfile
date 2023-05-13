@@ -51,6 +51,12 @@ end
 
 platform :ios do
   lane :beta do
+    increment_build_number(xcodeproj: "#{APP_NAME}.xcodeproj")
+    build_app(scheme: "#{APP_NAME}")
+    upload_to_testflight
+  end
+
+  lane :beta_gh_actions do
     keychain_name = TEMP_KEYCHAIN_USER
     keychain_password = TEMP_KEYCHAIN_PASSWORD
     ensure_temp_keychain(keychain_name, keychain_password)

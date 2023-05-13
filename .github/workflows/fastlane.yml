@@ -24,7 +24,7 @@ jobs:
       - name: Deploy to TestFlight
         uses: maierj/fastlane-action@v3.0.0
         with:
-          lane: beta
+          lane: beta_gh_actions
         env:
           APP_STORE_CONNECT_TEAM_ID: '${{ secrets.APP_STORE_CONNECT_TEAM_ID }}'
           DEVELOPER_APP_ID: '${{ secrets.DEVELOPER_APP_ID }}'
