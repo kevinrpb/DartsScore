@@ -9,20 +9,24 @@ let package = Package(
     products: [
         .library(
             name: "DartModels",
-            targets: ["DartModels"]),
+            targets: ["DartModels"]
+        ),
         .library(
             name: "CricketGame",
-            targets: ["CricketGame"]),
+            targets: ["CricketGame"]
+        ),
     ],
     dependencies: [],
     targets: [
         .target(
             name: "DartModels",
             dependencies: [],
-            path: "Sources/DartModels"),
+            path: "Sources/DartModels"
+        ),
         .target(
             name: "CricketGame",
             dependencies: ["DartModels"],
-            path: "Sources/CricketGame"),
+            path: "Sources/CricketGame"
+        ),
     ]
 )

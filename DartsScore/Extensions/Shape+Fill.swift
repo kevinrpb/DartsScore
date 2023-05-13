@@ -8,25 +8,23 @@
 import SwiftUI
 
 extension Shape {
-    func fill<Fill: ShapeStyle, Stroke: ShapeStyle>(
-        _ fillStyle: Fill,
-        strokeBorder strokeStyle: Stroke,
+    func fill(
+        _ fillStyle: some ShapeStyle,
+        strokeBorder strokeStyle: some ShapeStyle,
         lineWidth: Double = 1
     ) -> some View {
-        self
-            .stroke(strokeStyle, lineWidth: lineWidth)
-            .background(self.fill(fillStyle))
+        stroke(strokeStyle, lineWidth: lineWidth)
+            .background(fill(fillStyle))
     }
 }
 
 extension InsettableShape {
-    func fill<Fill: ShapeStyle, Stroke: ShapeStyle>(
-        _ fillStyle: Fill,
-        strokeBorder strokeStyle: Stroke,
+    func fill(
+        _ fillStyle: some ShapeStyle,
+        strokeBorder strokeStyle: some ShapeStyle,
         lineWidth: Double = 1
     ) -> some View {
-        self
-            .strokeBorder(strokeStyle, lineWidth: lineWidth)
-            .background(self.fill(fillStyle))
+        strokeBorder(strokeStyle, lineWidth: lineWidth)
+            .background(fill(fillStyle))
     }
 }

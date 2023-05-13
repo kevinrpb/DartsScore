@@ -1,6 +1,6 @@
 //
 //  DartThrow.swift
-//  
+//
 //  DartsScore
 //  Created by Romero Peces Barba, Kevin on 30/4/23.
 //
@@ -15,7 +15,7 @@ public enum DartThrow {
         switch self {
         case .miss:
             return 0
-        case .hit(let segment, let modifier):
+        case let .hit(segment, modifier):
             return modifier.multiplier * segment.value
         }
     }

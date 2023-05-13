@@ -1,6 +1,6 @@
 //
 //  Target.swift
-//  
+//
 //  DartsScore
 //  Created by Romero Peces Barba, Kevin on 30/4/23.
 //
@@ -8,6 +8,7 @@
 import Foundation
 
 // MARK: Models
+
 public struct Target {
     public struct Segment: Equatable, Hashable {
         public enum Modifier: Int {
@@ -32,6 +33,7 @@ public typealias TargetSegment = Target.Segment
 public typealias TargetSegmentModifier = Target.Segment.Modifier
 
 // MARK: Util values
+
 public extension Target.Segment {
     var allowedModifiers: [Modifier] {
         switch self {
@@ -54,6 +56,7 @@ public extension Target.Segment.Modifier {
 }
 
 // MARK: Default Target
+
 public extension Target.Segment {
     static let bull: Target.Segment = .init(label: "Bull", value: 25)
     static let d1: Target.Segment = .init(label: "1", value: 1)
@@ -77,7 +80,7 @@ public extension Target.Segment {
     static let d19: Target.Segment = .init(label: "19", value: 19)
     static let d20: Target.Segment = .init(label: "20", value: 20)
 
-    static let `defaultSegments`: [Target.Segment] = [
+    static let defaultSegments: [Target.Segment] = [
         bull,
         d1,
         d2,
@@ -102,7 +105,7 @@ public extension Target.Segment {
     ]
 }
 
-public extension Collection where Element == Target.Segment {
+public extension Collection<Target.Segment> {
     var bull: Target.Segment { .bull }
     var d1: Target.Segment { .d1 }
     var d2: Target.Segment { .d2 }

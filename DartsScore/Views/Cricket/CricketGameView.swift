@@ -29,6 +29,7 @@ struct CricketGameView: View {
             case .resetConfirm: return "Confirm Reset"
             }
         }
+
         var id: Int { rawValue }
     }
 
@@ -210,10 +211,10 @@ struct CricketGameView: View {
         .border(.black)
     }
 
-    private func TableCell<Content: View>(
+    private func TableCell(
         background: Color = .white.opacity(0.2),
         border: Color = .black,
-        @ViewBuilder _ content: @escaping () -> Content
+        @ViewBuilder _ content: @escaping () -> some View
     ) -> some View {
         ZStack {
             background

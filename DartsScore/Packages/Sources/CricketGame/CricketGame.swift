@@ -1,6 +1,6 @@
 //
 //  CricketGame.swift
-//  
+//
 //  DartsScore/Packages/CricketGame
 //  Created by Romero Peces Barba, Kevin on 30/4/23.
 //
@@ -28,7 +28,7 @@ public class CricketGame: ObservableObject {
 
         var score: Int {
             switch self {
-            case .closed(let score): return score
+            case let .closed(score): return score
             default: return 0
             }
         }
@@ -49,6 +49,7 @@ public class CricketGame: ObservableObject {
     @Published public var numberOfPlayers: PlayerQuantity = .two {
         didSet { updateClosures() }
     }
+
     @Published public var segments: TargetSegmentState = initialSegments
     @Published public var scores: [Player: Int] = initialScores
     @Published public var closures: [TargetSegment: Bool] = initialClosures
@@ -69,8 +70,8 @@ public class CricketGame: ObservableObject {
 
 // MARK: Throws
 
-extension CricketGame {
-    internal func process(_ dartThrow: DartThrow, clearRedo: Bool) {
+internal extension CricketGame {
+    func process(_ dartThrow: DartThrow, clearRedo: Bool) {
         guard closures[dartThrow.segment] != true else { return }
 
         throwsUndoHistory.append(dartThrow)
@@ -90,13 +91,13 @@ extension CricketGame {
         case .twoHits:
             segments[dartThrow.segment]![dartThrow.player] = .closed(score: 0)
             updateClosures()
-        case .closed(let score):
+        case let .closed(score):
             segments[dartThrow.segment]![dartThrow.player] = .closed(score: score + dartThrow.segment.value)
             scores[dartThrow.player]! += dartThrow.segment.value
         }
     }
 
-    internal func unprocess(_ dartThrow: DartThrow) {
+    func unprocess(_ dartThrow: DartThrow) {
         throwsRedoHistory.append(dartThrow)
 
         guard TargetSegment.cricketSegments.contains(dartThrow.segment) else {
@@ -108,7 +109,7 @@ extension CricketGame {
         case .open: segments[dartThrow.segment]![dartThrow.player] = .open
         case .oneHit: segments[dartThrow.segment]![dartThrow.player] = .open
         case .twoHits: segments[dartThrow.segment]![dartThrow.player] = .oneHit
-        case .closed(let score):
+        case let .closed(score):
             if score > 0 {
                 segments[dartThrow.segment]![dartThrow.player] = .closed(score: score - dartThrow.segment.value)
                 scores[dartThrow.player]! -= dartThrow.segment.value
@@ -119,7 +120,7 @@ extension CricketGame {
         }
     }
 
-    internal func updateClosures(segment: TargetSegment? = nil) {
+    func updateClosures(segment: TargetSegment? = nil) {
         let segmentsToCheck: [TargetSegment] = segment != nil ? [segment!] : TargetSegment.cricketSegments
         let playersToCheck: [Player]
 
@@ -144,23 +145,25 @@ extension CricketGame {
             closures[segment] = isClosed
         }
     }
+}
 
-    public func process(_ dartThrow: DartThrow) {
+public extension CricketGame {
+    func process(_ dartThrow: DartThrow) {
         process(dartThrow, clearRedo: true)
     }
 
-    public func undo() {
+    func undo() {
         guard let dartThrow = throwsUndoHistory.popLast() else { return }
         unprocess(dartThrow)
     }
 
-    public func redo() {
+    func redo() {
         guard let darThrow = throwsRedoHistory.popLast() else { return }
         process(darThrow, clearRedo: false)
     }
 
-    public var canUndo: Bool { !throwsUndoHistory.isEmpty }
-    public var canRedo: Bool { !throwsRedoHistory.isEmpty }
+    var canUndo: Bool { !throwsUndoHistory.isEmpty }
+    var canRedo: Bool { !throwsRedoHistory.isEmpty }
 }
 
 // MARK: Default values
@@ -172,7 +175,7 @@ internal extension CricketGame {
                 .p1: .open,
                 .p2: .open,
                 .p3: .open,
-                .p4: .open
+                .p4: .open,
             ]
         }
 
@@ -180,7 +183,7 @@ internal extension CricketGame {
         .p1: 0,
         .p2: 0,
         .p3: 0,
-        .p4: 0
+        .p4: 0,
     ]
 
     static let initialClosures: [TargetSegment: Bool] =

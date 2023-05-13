@@ -30,7 +30,7 @@ struct MainMenuView: View {
 
                 VStack {
                     Spacer()
-                    
+
                     Text("Darts Score")
                         .font(.system(size: 50, weight: .bold))
 

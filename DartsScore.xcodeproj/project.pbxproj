@@ -142,6 +142,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E3326BBB29FE772D00248C8F /* Build configuration list for PBXNativeTarget "DartsScore" */;
 			buildPhases = (
+				E30CBA552A0FA54A00A47DD3 /* SwiftFormat */,
 				E3326BA829FE772C00248C8F /* Sources */,
 				E3326BA929FE772C00248C8F /* Frameworks */,
 				E3326BAA29FE772C00248C8F /* Resources */,
@@ -206,6 +207,28 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		E30CBA552A0FA54A00A47DD3 /* SwiftFormat */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftFormat;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "cd BuildTools\nSDKROOT=(xcrun --sdk macosx --show-sdk-path)\n#swift package update #Uncomment this line temporarily to update the version used to the latest matching your BuildTools/Package.swift file\nswift run -c release swiftformat \"$SRCROOT\" --lint --lenient --swiftversion 5.7\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		E3326BA829FE772C00248C8F /* Sources */ = {
